@@ -1,12 +1,14 @@
 package in.co.greenwave.materialTypeMaster.entity;
 
 import java.time.LocalDateTime;
+import java.util.Objects;
 
 import org.springframework.web.bind.annotation.CrossOrigin;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 import lombok.AllArgsConstructor;
@@ -17,16 +19,24 @@ import lombok.Setter;
 
 @Entity
 @Table(name="materialTypeMaster")
-@Getter
-@Setter
-@AllArgsConstructor
-@NoArgsConstructor
-@Data
+/*
+ * @Getter
+ * 
+ * @Setter
+ * 
+ * @AllArgsConstructor
+ * 
+ * @NoArgsConstructor
+ * 
+ * @Data
+ */
 
 public class MaterialTypeMaster {
 	
 	   
-	    
+	    @Id
+	    @GeneratedValue(strategy = GenerationType.IDENTITY)
+	    private Long id;
 
 	    @Column(name = "entryTime")
 	    private LocalDateTime entryTime;
@@ -35,7 +45,7 @@ public class MaterialTypeMaster {
 	    private String userId;
        
 	    
-	    @Id
+	    
 	    @Column(name = "materialName")
 	    private String materialName;
 
@@ -63,6 +73,14 @@ public class MaterialTypeMaster {
 
 	    @Column(name = "UpdateTime")
 	    private LocalDateTime updateTime;
+
+		public Long getId() {
+			return id;
+		}
+
+		public void setId(Long id) {
+			this.id = id;
+		}
 
 		public LocalDateTime getEntryTime() {
 			return entryTime;
@@ -155,21 +173,16 @@ public class MaterialTypeMaster {
 
 		public MaterialTypeMaster() {
 			super();
-			// TODO Auto-generated constructor stub
 		}
 
-		@Override
-		public String toString() {
-			return "MaterialTypeMaster [entryTime=" + entryTime + ", userId=" + userId + ", materialName="
-					+ materialName + ", materialCode=" + materialCode + ", grnEntity=" + grnEntity
-					+ ", consumptionEntity=" + consumptionEntity + ", grnStdQty=" + grnStdQty + ", uom=" + uom
-					+ ", active=" + active + ", updatedBy=" + updatedBy + ", updateTime=" + updateTime + "]";
-		}
-
-		public MaterialTypeMaster(LocalDateTime entryTime, String userId, String materialName, String materialCode,
-				String grnEntity, String consumptionEntity, String grnStdQty, String uom, String active,
-				String updatedBy, LocalDateTime updateTime) {
+		
+		
+		
+		public MaterialTypeMaster(Long id, LocalDateTime entryTime, String userId, String materialName,
+				String materialCode, String grnEntity, String consumptionEntity, String grnStdQty, String uom,
+				String active, String updatedBy, LocalDateTime updateTime) {
 			super();
+			this.id = id;
 			this.entryTime = entryTime;
 			this.userId = userId;
 			this.materialName = materialName;
@@ -183,6 +196,37 @@ public class MaterialTypeMaster {
 			this.updateTime = updateTime;
 		}
 
-	    
-	    
+		@Override
+		public String toString() {
+			return "MaterialTypeMaster [id=" + id + ", entryTime=" + entryTime + ", userId=" + userId
+					+ ", materialName=" + materialName + ", materialCode=" + materialCode + ", grnEntity=" + grnEntity
+					+ ", consumptionEntity=" + consumptionEntity + ", grnStdQty=" + grnStdQty + ", uom=" + uom
+					+ ", active=" + active + ", updatedBy=" + updatedBy + ", updateTime=" + updateTime + "]";
+		}
+
+		@Override
+		public int hashCode() {
+			return Objects.hash(active, consumptionEntity, entryTime, grnEntity, grnStdQty, id, materialCode,
+					materialName, uom, updateTime, updatedBy, userId);
+		}
+
+		@Override
+		public boolean equals(Object obj) {
+			if (this == obj)
+				return true;
+			if (obj == null)
+				return false;
+			if (getClass() != obj.getClass())
+				return false;
+			MaterialTypeMaster other = (MaterialTypeMaster) obj;
+			return Objects.equals(active, other.active) && Objects.equals(consumptionEntity, other.consumptionEntity)
+					&& Objects.equals(entryTime, other.entryTime) && Objects.equals(grnEntity, other.grnEntity)
+					&& Objects.equals(grnStdQty, other.grnStdQty) && Objects.equals(id, other.id)
+					&& Objects.equals(materialCode, other.materialCode)
+					&& Objects.equals(materialName, other.materialName) && Objects.equals(uom, other.uom)
+					&& Objects.equals(updateTime, other.updateTime) && Objects.equals(updatedBy, other.updatedBy)
+					&& Objects.equals(userId, other.userId);
+		}
+
+	
 }

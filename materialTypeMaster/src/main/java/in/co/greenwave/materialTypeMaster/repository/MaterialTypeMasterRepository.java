@@ -7,7 +7,7 @@ import in.co.greenwave.materialTypeMaster.entity.MaterialTypeMaster;
 
 
 @Repository
-public interface MaterialTypeMasterRepository  extends JpaRepository<MaterialTypeMaster, Long>{
+public interface MaterialTypeMasterRepository  extends JpaRepository<MaterialTypeMaster,String>{
 
 	
 	
