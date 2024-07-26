@@ -4,13 +4,15 @@ import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.co.greenwave.materialTypeMaster.dao.MasterData;
 import in.co.greenwave.materialTypeMaster.entity.MaterialMaster;
 import in.co.greenwave.materialTypeMaster.entity.MaterialTypeMaster;
-import in.co.greenwave.materialTypeMaster.service.MaterialMasterIpml;
+import in.co.greenwave.materialTypeMaster.service.MaterialMasterService;
 
 
 
@@ -20,8 +22,8 @@ import in.co.greenwave.materialTypeMaster.service.MaterialMasterIpml;
 public class MaterialMasterController {
 	
 	
-	@Autowired
-	private MaterialMasterIpml   ser;
+	@Autowired(required=true)
+	private MaterialMasterService  ser;
 	
 	@GetMapping("/get")
 	public List<MaterialMaster> getData() {
@@ -37,6 +39,13 @@ public class MaterialMasterController {
 		return masteData;
 	}
 	
+	@PostMapping("/save/master")
+	public String saveMaterialMaster(@RequestBody MasterData  master ) {
+		
+		System.out.println(master.getDescription());
+		//ser.saveMaterialMaster(master);
+		return "save";
+	}
 	
 
 }

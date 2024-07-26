@@ -21,6 +21,12 @@ public interface MaterialMasterRepository extends JpaRepository<MaterialMaster, 
 	
 	@Query(value="SELECT sapcode,b.material_name,a.user_id  FROM [Filter_PI].[dbo].[material_type_master] a inner join [Filter_PI].[dbo].material_master b on  a.id=b.id " , nativeQuery = true)
 	public List<Object> getwholeData( ) ;
+	/*
+	 * @Query(value="",nativeQuery = true)
+	 * 
+	 * public String saveMaterialMAster() ;
+	 * 
+	 */
 	
-
+	
 }

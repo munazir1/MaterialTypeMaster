@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import in.co.greenwave.materialTypeMaster.entity.MaterialMaster;
 import in.co.greenwave.materialTypeMaster.entity.MaterialTypeMaster;
-import in.co.greenwave.materialTypeMaster.service.MaterialTypeMasterServiceImlp;
+import in.co.greenwave.materialTypeMaster.service.MaterialTypeMasterService;
 
 
 
@@ -21,7 +21,7 @@ public class MaterialTypeMasterController {
 
 	
 	@Autowired
-	private MaterialTypeMasterServiceImlp service;
+	private MaterialTypeMasterService service;
 	
 	
 	@GetMapping("/test")
