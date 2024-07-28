@@ -3,6 +3,7 @@ package in.co.greenwave.materialTypeMaster.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -40,11 +41,11 @@ public class MaterialMasterController {
 	}
 	
 	@PostMapping("/save/master")
-	public String saveMaterialMaster(@RequestBody MasterData  master ) {
-		
-		System.out.println(master.getDescription());
+	public ResponseEntity<?>  saveMaterialMaster(@RequestBody MaterialMaster  master ) {
+		System.out.println(master.getInternalMaterialCode());
+		ResponseEntity<?> saveMaterialMaster = ser.saveMaterialMaster(master);
 		//ser.saveMaterialMaster(master);
-		return "save";
+		return saveMaterialMaster;
 	}
 	
 

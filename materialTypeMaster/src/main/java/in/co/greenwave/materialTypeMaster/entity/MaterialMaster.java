@@ -1,6 +1,7 @@
 package in.co.greenwave.materialTypeMaster.entity;
 
 import java.sql.Date;
+import java.time.LocalDateTime;
 import java.util.Objects;
 
 import jakarta.persistence.Column;
@@ -52,12 +53,18 @@ public class MaterialMaster {
 	    private String updatedBy;
 
 	    //@Temporal(TemporalType.TIMESTAMP)
-	    @Column(name = "UpdateTime", nullable = false)
-	    private Date updateTime;
+	    @Column(name = "UpdateTime")
+	    private LocalDateTime updateTime;
+	    
+	    
+
+		public MaterialMaster() {
+			super();
+		}
 
 		public MaterialMaster(Long id, String entryTime, String userId, String materialName,
 				String internalMaterialCode, String sapCode, String description, int active, String updatedBy,
-				Date updateTime) {
+				LocalDateTime updateTime) {
 			super();
 			this.id = id;
 			this.entryTime = entryTime;
@@ -143,11 +150,11 @@ public class MaterialMaster {
 			this.updatedBy = updatedBy;
 		}
 
-		public Date getUpdateTime() {
+		public LocalDateTime getUpdateTime() {
 			return updateTime;
 		}
 
-		public void setUpdateTime(Date updateTime) {
+		public void setUpdateTime(LocalDateTime updateTime) {
 			this.updateTime = updateTime;
 		}
 
@@ -159,8 +166,13 @@ public class MaterialMaster {
 					+ ", updateTime=" + updateTime + "]";
 		}
 
-		public MaterialMaster() {
+		public MaterialMaster(String string, String string2, int i, LocalDateTime localDateTime, String string3, String string4, String string5) {
 			super();
+		}
+
+		public MaterialMaster(String userId2, String internalMaterialCode2, int active2, LocalDateTime updateTime2,
+				String description2, String sapCode2) {
+			// TODO Auto-generated constructor stub
 		}
 
 	  
