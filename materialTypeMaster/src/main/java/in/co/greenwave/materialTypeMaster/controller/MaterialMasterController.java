@@ -24,7 +24,7 @@ public class MaterialMasterController {
 	@Autowired(required=true)
 	private MaterialMasterService  ser;
 	
-	@GetMapping("/get")
+	@GetMapping("/getDetails")
 	public List<MaterialMaster> getData() {
 		List<MaterialMaster> getdata = ser.getdata();
 		System.out.println("_-----"+getdata);
@@ -32,13 +32,13 @@ public class MaterialMasterController {
 	}
 	
 	
-	@GetMapping("/data")
+	@GetMapping("/getName")
 	public 	List<Object> getdata() {
 		 List<Object> masteData = ser.getMasteData();
 		return masteData;
 	}
 	
-	@PostMapping("/save/master")
+	@PostMapping("/save/masterDetails")
 	public ResponseEntity<?>  saveMaterialMaster(@RequestBody MaterialMaster  master ) {
 		System.out.println(master.getInternalMaterialCode());
 		ResponseEntity<?> saveMaterialMaster = ser.saveMaterialMaster(master);
