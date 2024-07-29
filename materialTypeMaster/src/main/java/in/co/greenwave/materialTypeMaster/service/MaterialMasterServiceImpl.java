@@ -39,12 +39,12 @@ public  class MaterialMasterServiceImpl  implements MaterialMasterService{
 	public ResponseEntity<?>  saveMaterialMaster(MaterialMaster master) {
 		List<MaterialMaster> all = repo.findAll();
 		for (MaterialMaster materialMaster : all) {
-			if(materialMaster.getActive( )==1&&  materialMaster.getSapCode().equalsIgnoreCase(master.getSapCode()) ) {
+			if(materialMaster.getActive( )==0&&  materialMaster.getSapCode().equalsIgnoreCase(master.getSapCode()) ) {
 			repo.save(master);
 			return  ResponseEntity.status(HttpStatus.CONFLICT).body("sapCode with "+master.getSapCode()+" already exist");
 			}
-			DateTimeFormatter ofPattern = DateTimeFormatter.ofPattern("yyyy-mm-hh hh:mm:ss");
-			 master.setEntryTime(LocalDateTime.now().format(ofPattern));
+			//DateTimeFormatter ofPattern = DateTimeFormatter.ofPattern("yyyy-mm-hh hh:mm:ss");
+			 master.setEntryTime(LocalDateTime.now());
 			repo.save(master);
 			}
 		return  ResponseEntity.status(HttpStatus.CREATED).body("Masterial Details Saved");}

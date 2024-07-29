@@ -4,7 +4,6 @@ import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
-import in.co.greenwave.materialTypeMaster.dao.MasterData;
 import in.co.greenwave.materialTypeMaster.entity.MaterialMaster;
 
 public interface MaterialMasterService {

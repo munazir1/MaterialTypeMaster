@@ -10,9 +10,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import in.co.greenwave.materialTypeMaster.dao.MasterData;
 import in.co.greenwave.materialTypeMaster.entity.MaterialMaster;
-import in.co.greenwave.materialTypeMaster.entity.MaterialTypeMaster;
 import in.co.greenwave.materialTypeMaster.service.MaterialMasterService;
 
 

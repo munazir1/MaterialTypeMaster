@@ -29,7 +29,7 @@ public class MaterialMaster {
 	   
 	    //s@GeneratedValue(strategy = GenerationType.IDENTITY)
 	    @Column(name = "EntryTime")
-	    private String entryTime;
+	    private LocalDateTime entryTime;
 
 	    @Column(name = "UserId", nullable = false)
 	    private String userId;
@@ -62,7 +62,7 @@ public class MaterialMaster {
 			super();
 		}
 
-		public MaterialMaster(Long id, String entryTime, String userId, String materialName,
+		public MaterialMaster(Long id, LocalDateTime entryTime, String userId, String materialName,
 				String internalMaterialCode, String sapCode, String description, int active, String updatedBy,
 				LocalDateTime updateTime) {
 			super();
@@ -86,11 +86,11 @@ public class MaterialMaster {
 			this.id = id;
 		}
 
-		public String getEntryTime() {
+		public LocalDateTime getEntryTime() {
 			return entryTime;
 		}
 
-		public void setEntryTime(String entryTime) {
+		public void setEntryTime(LocalDateTime entryTime) {
 			this.entryTime = entryTime;
 		}
 

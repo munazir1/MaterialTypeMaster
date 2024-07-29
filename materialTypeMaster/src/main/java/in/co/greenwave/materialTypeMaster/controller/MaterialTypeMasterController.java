@@ -15,7 +15,7 @@ import in.co.greenwave.materialTypeMaster.service.MaterialTypeMasterService;
 
 
 @RestController
-@RequestMapping("/material")
+@RequestMapping("/materialTpye")
 @CrossOrigin(origins="*")
 public class MaterialTypeMasterController {
 
@@ -24,9 +24,9 @@ public class MaterialTypeMasterController {
 	private MaterialTypeMasterService service;
 	
 	
-	@GetMapping("/test")
+	@GetMapping("/details")
 	public 	List<MaterialTypeMaster> getdata() {
-		List<MaterialTypeMaster> materialTypeMaster2 = service.getMaterialTypeMaster();
+		List<MaterialTypeMaster> materialTypeMaster2 = service.getMaterialTypeMasterData();
 		return materialTypeMaster2;
 	}
 	

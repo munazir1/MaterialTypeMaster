@@ -16,7 +16,7 @@ public class MaterialTypeMasterServiceImpl implements MaterialTypeMasterService 
 	 private MaterialTypeMasterRepository  repo;
 
 	@Override
-	public List<MaterialTypeMaster> getMaterialTypeMaster() {
+	public List<MaterialTypeMaster> getMaterialTypeMasterData() {
 		List<MaterialTypeMaster> all = repo.findAll();
 		
 		

@@ -6,6 +6,6 @@ import in.co.greenwave.materialTypeMaster.entity.MaterialTypeMaster;
 
 public interface MaterialTypeMasterService {
 	
-	public List<MaterialTypeMaster>  getMaterialTypeMaster();
+	public List<MaterialTypeMaster>  getMaterialTypeMasterData();
 
 }
