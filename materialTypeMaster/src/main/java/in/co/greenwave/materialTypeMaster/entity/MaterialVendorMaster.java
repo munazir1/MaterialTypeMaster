@@ -3,10 +3,16 @@ package in.co.greenwave.materialTypeMaster.entity;
 import java.time.LocalDateTime;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 
 @Entity
 public class MaterialVendorMaster {
 	
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long id;
 	private String userId ;
 	private LocalDateTime entryTime;
 	private String materialName;
@@ -100,6 +106,7 @@ public class MaterialVendorMaster {
 	public void setUpdateTime(LocalDateTime updateTime) {
 		this.updateTime = updateTime;
 	}
+	
 	public MaterialVendorMaster(String userId, LocalDateTime entryTime, String materialName, String materialSAPCode,
 			String materialCode, String description, String vendorName, String vendorCode, int usable,
 			String statusChangedBy, int active, String updatedBy, LocalDateTime updateTime) {
@@ -119,9 +126,12 @@ public class MaterialVendorMaster {
 		this.updateTime = updateTime;
 	}
 	
+	
 	public MaterialVendorMaster() {
 		super();
 	}
+	
+	
 	@Override
 	public String toString() {
 		return "MaterialVendorMaster [userId=" + userId + ", entryTime=" + entryTime + ", materialName=" + materialName
