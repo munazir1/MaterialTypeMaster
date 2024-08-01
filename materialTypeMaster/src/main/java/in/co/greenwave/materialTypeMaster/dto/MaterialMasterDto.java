@@ -1,10 +1,10 @@
-package in.co.greenwave.materialTypeMaster.dao;
+package in.co.greenwave.materialTypeMaster.dto;
 
 import java.time.LocalDateTime;
 
 
 
-public class MasterData {
+public class MaterialMasterDto {
 	 private LocalDateTime entryTime;
 	    private String userId;
 	    private String materialName;
@@ -21,7 +21,7 @@ public class MasterData {
 	    private String uom;
 	    
 	    
-		public MasterData() {
+		public MaterialMasterDto() {
 			super();
 			// TODO Auto-generated constructor stub
 		}
@@ -111,7 +111,7 @@ public class MasterData {
 			this.uom = uom;
 		}
 	    
-		public MasterData(LocalDateTime entryTime, String userId, String materialName, String internalMaterialCode,
+		public MaterialMasterDto(LocalDateTime entryTime, String userId, String materialName, String internalMaterialCode,
 				String sapCode, String description, int active, String updatedBy, LocalDateTime updateTime,
 				String materialCode, String grnEntity, String consumptionEntity, String grnStdQty, String uom) {
 			super();

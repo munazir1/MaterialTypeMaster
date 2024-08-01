@@ -18,11 +18,10 @@ public class MaterialTypeMasterServiceImpl implements MaterialTypeMasterService 
 	@Override
 	public List<MaterialTypeMaster> getMaterialTypeMasterData() {
 		List<MaterialTypeMaster> all = repo.findAll();
-		
-		
-	
 		return all;
 	}
+
+	
 	 
 	 
 	 
