@@ -22,7 +22,6 @@ public class MaterialVendorMasterServiceImpl implements MaterialVendorMasterServ
 	}
 	@Override
 	public void saveMaterialVendorMaster(MaterialVendorMaster  vendorS){
-		
 		materialVendorMasterRepo.save(vendorS);
 	}
  

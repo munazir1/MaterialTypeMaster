@@ -24,8 +24,6 @@ public class MaterialVendorMasterController {
 	public List<MaterialVendorMaster>  getMaterialVendorMaster(){
 		List<MaterialVendorMaster> materialVendorMaster = materialVendorMasterService.getMaterialVendorMaster();
 		return materialVendorMaster;
-		
-		
 	}
 	
 	@PostMapping("/saveMaterialVendor")
