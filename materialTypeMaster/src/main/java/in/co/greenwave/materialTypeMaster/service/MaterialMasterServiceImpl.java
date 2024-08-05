@@ -4,6 +4,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.web.format.DateTimeFormatters;
@@ -30,7 +31,9 @@ public class MaterialMasterServiceImpl implements MaterialMasterService {
 	@Override
 	public List<MaterialMaster> getdata() {
 		List<MaterialMaster> all = repo.findAll();
-		return all;
+		List<MaterialMaster> ACtiveMaterials = all.stream().filter(materialMaster -> materialMaster.getActive() == 1).collect(Collectors.toList());
+		System.out.println("getDetails of materilas"+all);
+		return ACtiveMaterials;
 	}
 
 	@Override

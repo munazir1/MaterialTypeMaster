@@ -2,20 +2,27 @@ package in.co.greenwave.materialTypeMaster.entity;
 
 import java.time.LocalDateTime;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+import jakarta.persistence.UniqueConstraint;
 
 @Entity
+@Table(name="material_VendorMaster",uniqueConstraints = {@UniqueConstraint(columnNames = {"material_sapcode", "vendorCode", "active"})})
+
 public class MaterialVendorMaster {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	
 	private Long id;
 	private String userId ;
 	private LocalDateTime entryTime;
 	private String materialName;
+	@Column(name="material_SAPCode")
 	private String materialSAPCode;
 	private String materialCode;
 	private String description;
@@ -26,6 +33,10 @@ public class MaterialVendorMaster {
 	private int active;
 	private String updatedBy;
 	private LocalDateTime updateTime;
+	
+	
+	
+	
 	
 	
 	public String getUserId() {

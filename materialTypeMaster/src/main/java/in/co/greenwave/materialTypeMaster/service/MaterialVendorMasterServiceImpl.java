@@ -11,9 +11,11 @@ import in.co.greenwave.materialTypeMaster.repository.MaterialVendorMasterRepo;
 @Service
 public class MaterialVendorMasterServiceImpl implements MaterialVendorMasterService {
 	
+	
 	@Autowired
 	 private MaterialVendorMasterRepo  materialVendorMasterRepo  ;
 
+	
 	@Override
 	public List<MaterialVendorMaster> getMaterialVendorMaster() {
 		List<MaterialVendorMaster> all = materialVendorMasterRepo.findAll();
