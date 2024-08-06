@@ -1,6 +1,7 @@
 package in.co.greenwave.materialTypeMaster.controller;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -48,6 +49,14 @@ public class MaterialMasterController {
 		
 		 List<Object> masteData = ser.getMaterialName();
 		return masteData;
+	}
+	
+	
+	@GetMapping("/getSapCode")
+	public 	List<String> getSapCode() {
+		List<String> sapCode = ser.getSapCode();
+		 
+		return  sapCode;
 	}
 	
 	@PostMapping("/save/materialDetails")

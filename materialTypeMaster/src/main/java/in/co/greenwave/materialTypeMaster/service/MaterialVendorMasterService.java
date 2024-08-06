@@ -10,4 +10,6 @@ public interface MaterialVendorMasterService {
 	public List<MaterialVendorMaster> getMaterialVendorMaster();
 
 	public void  saveMaterialVendorMaster(MaterialVendorMaster vendorS);
+
+	public void updateMaterialVendorMaster(MaterialVendorMaster materialVendorMaster);
 }

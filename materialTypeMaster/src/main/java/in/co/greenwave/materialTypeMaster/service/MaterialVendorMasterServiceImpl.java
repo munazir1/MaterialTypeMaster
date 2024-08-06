@@ -22,9 +22,27 @@ public class MaterialVendorMasterServiceImpl implements MaterialVendorMasterServ
 		
 		return all;
 	}
+	
 	@Override
 	public void saveMaterialVendorMaster(MaterialVendorMaster  vendorS){
 		materialVendorMasterRepo.save(vendorS);
 	}
+
+	@Override
+	public void updateMaterialVendorMaster(MaterialVendorMaster materialVendorMaster) {
+		// TODO Auto-generated method stub
+		
+	}
+
+	/*@Override
+	public void updateMaterialVendorMaster(MaterialVendorMaster materialVendorMaster) {
+		String materialSAPCode = materialVendorMaster.getMaterialSAPCode();
+		
+		for(materialSAPCode) {
+			materialVendorMasterRepo	
+			
+		}
+		*/
+	
  
 }

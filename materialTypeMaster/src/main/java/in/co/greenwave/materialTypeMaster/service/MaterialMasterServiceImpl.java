@@ -22,9 +22,11 @@ import in.co.greenwave.materialTypeMaster.repository.MaterialTypeMasterRepositor
 @Service
 public class MaterialMasterServiceImpl implements MaterialMasterService {
 
+	
 	@Autowired
 	private MaterialMasterRepository repo;
 
+	
 	@Autowired
 	private MaterialTypeMasterRepository materialTypeMasterRepository;
 
@@ -36,6 +38,7 @@ public class MaterialMasterServiceImpl implements MaterialMasterService {
 		return ACtiveMaterials;
 	}
 
+	
 	@Override
 	public List<Object> getMaterialName() {
 		List<Object> getwholeData = repo.getMaterialData();
@@ -43,6 +46,7 @@ public class MaterialMasterServiceImpl implements MaterialMasterService {
 	}
 	
 
+	
 	@Override
 	public ResponseEntity<?> saveMaterialMaster(MaterialMaster master) {
 		      boolean exists = repo.findAll().stream()
@@ -57,6 +61,7 @@ public class MaterialMasterServiceImpl implements MaterialMasterService {
 			    repo.save(master);
 			    return ResponseEntity.status(HttpStatus.CREATED).body("Material Details Saved");
 			}
+	
 	
 	
 	
@@ -97,10 +102,19 @@ public class MaterialMasterServiceImpl implements MaterialMasterService {
 		return ResponseEntity.ok(" Material  Updated ");
 	}
 
+
+	@Override
+	public List<String> getSapCode() {
+		List<String> sapCode = repo.getSapCode();
+		//.ma.distinct().collect(Collectors.toList());
+		return sapCode;
+	}
+
 	/*
 	 * @Override public ResponseEntity<?> insertMaterialMaster() {
 	 * 
 	 * return null; }
 	 */
+	
 
 	}

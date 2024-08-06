@@ -20,18 +20,21 @@ public class MaterialVendorMasterController {
 	private MaterialVendorMasterService materialVendorMasterService;
 	
 	
-	
-	
 	@GetMapping("/details")
 	public List<MaterialVendorMaster>  getMaterialVendorMaster(){
 		List<MaterialVendorMaster> materialVendorMaster = materialVendorMasterService.getMaterialVendorMaster();
 		return materialVendorMaster;
 	}
 	
-	
 	@PostMapping("/saveMaterialVendor")
 	public void  gaveMaterialVendorMaster(@RequestBody MaterialVendorMaster materialVendorMaster){
 		 materialVendorMasterService.saveMaterialVendorMaster(materialVendorMaster);
+		//return materialVendorMaster;
+	}
+	
+	@PostMapping("/updateMaterialVendor")
+	public void  updateMaterialVendorMaster(@RequestBody MaterialVendorMaster materialVendorMaster){
+		 materialVendorMasterService.updateMaterialVendorMaster(materialVendorMaster);
 		//return materialVendorMaster;
 	}
 	
