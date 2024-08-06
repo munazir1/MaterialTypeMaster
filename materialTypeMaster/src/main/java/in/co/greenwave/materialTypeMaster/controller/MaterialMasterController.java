@@ -91,7 +91,7 @@ public class MaterialMasterController {
 				
 				  materialMaster.getDescription(); materialMaster.getInternalMaterialCode();
 				  
-				  InternalMaterialCode.put("sapCode", materialMaster.getSapCode());
+				  InternalMaterialCode.put("internalMaterialCode", materialMaster.getSapCode());
 				  InternalMaterialCode.put("description", materialMaster.getDescription());
 			 
 			 
