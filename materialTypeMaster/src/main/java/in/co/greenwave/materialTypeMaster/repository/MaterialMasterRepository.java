@@ -25,8 +25,8 @@ public interface MaterialMasterRepository extends JpaRepository<MaterialMaster, 
 	
 	
 	
-	@Query(value="SELECT internal_material_code,description FROM [dbo].[material_master]  where  active=1 and material_name=:materialName and  sapcode=:sapCode",nativeQuery = true)
-	public List<MaterialMaster> getMaterialCodeAndDescription(@Param("materialName") String materialName,@Param("sapCode") String sapCode ) ;
+	  @Query(value="SELECT * FROM [dbo].[material_master]  where  active=1 and material_name=:materialName and  sapcode=:sapCode",nativeQuery = true)
+	  public List<MaterialMaster> getMaterialCodeAndDescription(@Param("materialName") String materialName,@Param("sapCode") String sapCode );
 
 	/*
 	 * @Query(value="",nativeQuery = true)

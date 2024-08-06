@@ -1,6 +1,9 @@
 package in.co.greenwave.materialTypeMaster.controller;
 
+import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -80,8 +83,20 @@ public class MaterialMasterController {
 
 
 		@GetMapping("/getDescription")
-		public 	List<MaterialMaster> getInternalMaerialCodeAndDes(@RequestParam("materialName" ) String materialName ,@RequestParam("sapCode" ) String sapCode) {
+		public 	 Map<String,String> getInternalMaerialCodeAndDes(@RequestParam("materialName" ) String materialName ,@RequestParam("sapCode" ) String sapCode) {
 		 List<MaterialMaster> materialInternaLCodeAnddes = ser.getMaterialInternaLCodeAnddes(materialName, sapCode);
-			return  materialInternaLCodeAnddes;
+		// MaterialMaster materislMAster=new MaterialMaster();
+		 Map<String,String> InternalMaterialCode = new HashMap<>();
+		 for (MaterialMaster materialMaster : materialInternaLCodeAnddes) {
+				
+				  materialMaster.getDescription(); materialMaster.getInternalMaterialCode();
+				  
+				  InternalMaterialCode.put("sapCode", materialMaster.getSapCode());
+				  InternalMaterialCode.put("description", materialMaster.getDescription());
+			 
+			 
+		 }	
+		 
+		 return  InternalMaterialCode;
 		}
 }

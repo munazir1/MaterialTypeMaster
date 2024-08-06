@@ -27,7 +27,7 @@ import lombok.NoArgsConstructor;
  * 
  * @Getter
  */
-public class MaterialMaster {
+public class MaterialMaster{
 	
 	
 	   @Id
@@ -66,7 +66,13 @@ public class MaterialMaster {
 	    
 
 		
-		  public MaterialMaster() { super(); }
+		  public MaterialMaster(String internalMaterialCode, String description) {
+			super();
+			this.internalMaterialCode = internalMaterialCode;
+			this.description = description;
+		}
+
+		public MaterialMaster() { super(); }
 		  
 		  public MaterialMaster(Long id, LocalDateTime entryTime, String userId, String
 		  materialName, String internalMaterialCode, String sapCode, String
