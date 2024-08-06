@@ -104,8 +104,8 @@ public class MaterialMasterServiceImpl implements MaterialMasterService {
 
 
 	@Override
-	public List<String> getSapCode() {
-		List<String> sapCode = repo.getSapCode();
+	public List<String> getSapCode( String materialName) {
+	 List<String> sapCode = repo.getSapCode(materialName);
 		//.ma.distinct().collect(Collectors.toList());
 		return sapCode;
 	}

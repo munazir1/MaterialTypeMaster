@@ -12,7 +12,7 @@ public interface MaterialMasterService {
 	public List<MaterialMaster>   getdata();
 	
 	public List<Object>  getMaterialName();
-	public List<String> getSapCode();
+	public List<String> getSapCode(String materialName);
 	public ResponseEntity<?> saveMaterialMaster(MaterialMaster master);
 	public ResponseEntity<?> insertMaterialMaster(MaterialMaster materialMaster);
 	 
