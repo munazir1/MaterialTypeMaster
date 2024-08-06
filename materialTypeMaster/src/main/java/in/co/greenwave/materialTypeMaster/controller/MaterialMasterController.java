@@ -53,7 +53,6 @@ public class MaterialMasterController {
 		return masteData;
 	}
 	
-	
 	@GetMapping("/getSapCode")
 	public 	List<String> getSapCode(@RequestParam("materialName" ) String materialName) {
 		List<String> sapCode = ser.getSapCode(materialName); 
@@ -62,7 +61,7 @@ public class MaterialMasterController {
 	
 	
 	@PostMapping("/save/materialDetails")
-	public ResponseEntity<?>  saveMaterialMaster(@RequestParam MaterialMaster  master ) {
+	public ResponseEntity<?>  saveMaterialMaster(@RequestBody MaterialMaster  master ) {
 		/*
 		 * System.out.println("masterId"+master.getId());
 		 * System.out.println(master.getInternalMaterialCode());

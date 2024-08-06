@@ -23,10 +23,14 @@ public class MaterialVendorMasterServiceImpl implements MaterialVendorMasterServ
 		return all;
 	}
 	
+	
+	
 	@Override
 	public void saveMaterialVendorMaster(MaterialVendorMaster  vendorS){
 		materialVendorMasterRepo.save(vendorS);
 	}
+
+
 
 	@Override
 	public void updateMaterialVendorMaster(MaterialVendorMaster materialVendorMaster) {
@@ -34,14 +38,20 @@ public class MaterialVendorMasterServiceImpl implements MaterialVendorMasterServ
 		
 	}
 
+	
+	
+	/*
+	 * @Override public void updateMaterialVendorMaster(MaterialVendorMaster
+	 * materialVendorMaster) {
+	 * materialVendorMasterRepo.findAll().stream().anyMatch(i->i.getActive()==1). }
+	 */
+
 	/*@Override
 	public void updateMaterialVendorMaster(MaterialVendorMaster materialVendorMaster) {
 		String materialSAPCode = materialVendorMaster.getMaterialSAPCode();
 		
 		for(materialSAPCode) {
-			materialVendorMasterRepo	
-			
-		}
+			materialVendorMasterRepo			}
 		*/
 	
  
