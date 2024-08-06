@@ -18,7 +18,8 @@ public class MaterialVendorMasterServiceImpl implements MaterialVendorMasterServ
 	
 	@Override
 	public List<MaterialVendorMaster> getMaterialVendorMaster() {
-		List<MaterialVendorMaster> all = materialVendorMasterRepo.findAll();
+		List<MaterialVendorMaster> all = materialVendorMasterRepo.getMaterialvendorMaster();
+	
 		
 		return all;
 	}
@@ -29,6 +30,7 @@ public class MaterialVendorMasterServiceImpl implements MaterialVendorMasterServ
 	public void saveMaterialVendorMaster(MaterialVendorMaster  vendorS){
 		materialVendorMasterRepo.save(vendorS);
 	}
+	
 
 
 

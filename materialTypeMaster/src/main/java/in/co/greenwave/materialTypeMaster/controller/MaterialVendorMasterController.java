@@ -22,7 +22,7 @@ public class MaterialVendorMasterController {
 	private MaterialVendorMasterService materialVendorMasterService;
 	
 	
-	@GetMapping("/details")
+	@GetMapping("/getMatrialVendor")
 	public List<MaterialVendorMaster>  getMaterialVendorMaster(){
 		List<MaterialVendorMaster> materialVendorMaster = materialVendorMasterService.getMaterialVendorMaster();
 		return materialVendorMaster;

@@ -88,15 +88,10 @@ public class MaterialMasterController {
 		// MaterialMaster materislMAster=new MaterialMaster();
 		 Map<String,String> InternalMaterialCode = new HashMap<>();
 		 for (MaterialMaster materialMaster : materialInternaLCodeAnddes) {
-				
 				  materialMaster.getDescription(); materialMaster.getInternalMaterialCode();
-				  
 				  InternalMaterialCode.put("internalMaterialCode", materialMaster.getInternalMaterialCode());
 				  InternalMaterialCode.put("description", materialMaster.getDescription());
-			 
-			 
 		 }	
-		 
 		 return  InternalMaterialCode;
 		}
 }
