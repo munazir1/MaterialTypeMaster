@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import in.co.greenwave.materialTypeMaster.entity.MaterialMaster;
@@ -53,14 +54,15 @@ public class MaterialMasterController {
 	}
 	
 	
-	@GetMapping("/getSapCode/{materialName}")
-	public 	List<String> getSapCode(@PathVariable("materialName" ) String materialName) {
+	@GetMapping("/getSapCode")
+	public 	List<String> getSapCode(@RequestParam("materialName" ) String materialName) {
 		List<String> sapCode = ser.getSapCode(materialName); 
 		return  sapCode;
 	}
 	
+	
 	@PostMapping("/save/materialDetails")
-	public ResponseEntity<?>  saveMaterialMaster(@RequestBody MaterialMaster  master ) {
+	public ResponseEntity<?>  saveMaterialMaster(@RequestParam MaterialMaster  master ) {
 		/*
 		 * System.out.println("masterId"+master.getId());
 		 * System.out.println(master.getInternalMaterialCode());
