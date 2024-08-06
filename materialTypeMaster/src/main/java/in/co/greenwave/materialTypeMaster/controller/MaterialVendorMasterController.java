@@ -3,6 +3,7 @@ package in.co.greenwave.materialTypeMaster.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -14,6 +15,7 @@ import in.co.greenwave.materialTypeMaster.service.MaterialVendorMasterService;
 
 @RestController
 @RequestMapping("/materialVendor")
+@CrossOrigin(origins = "*")
 public class MaterialVendorMasterController {
 	
 	@Autowired

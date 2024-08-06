@@ -78,4 +78,10 @@ public class MaterialMasterController {
 		  return insertMaterialMaster;
 	  }
 
+
+		@GetMapping("/getDescription")
+		public 	List<MaterialMaster> getInternalMaerialCodeAndDes(@RequestParam("materialName" ) String materialName ,@RequestParam("sapCode" ) String sapCode) {
+		 List<MaterialMaster> materialInternaLCodeAnddes = ser.getMaterialInternaLCodeAnddes(materialName, sapCode);
+			return  materialInternaLCodeAnddes;
+		}
 }

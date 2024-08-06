@@ -15,6 +15,7 @@ public interface MaterialMasterService {
 	public List<String> getSapCode(String materialName);
 	public ResponseEntity<?> saveMaterialMaster(MaterialMaster master);
 	public ResponseEntity<?> insertMaterialMaster(MaterialMaster materialMaster);
+	public List<MaterialMaster>  getMaterialInternaLCodeAnddes(String materialName,String sapCode);
 	 
 	
 	

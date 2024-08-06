@@ -110,6 +110,13 @@ public class MaterialMasterServiceImpl implements MaterialMasterService {
 		return sapCode;
 	}
 
+
+	@Override
+	public List<MaterialMaster> getMaterialInternaLCodeAnddes(String materialName, String sapCode) {
+		List<MaterialMaster> materialCodeAndDescription = repo.getMaterialCodeAndDescription(materialName, sapCode);
+		return materialCodeAndDescription;
+	}
+
 	/*
 	 * @Override public ResponseEntity<?> insertMaterialMaster() {
 	 * 
