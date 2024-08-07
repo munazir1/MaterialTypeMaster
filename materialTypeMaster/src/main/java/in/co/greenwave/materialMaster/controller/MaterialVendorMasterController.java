@@ -1,4 +1,4 @@
-package in.co.greenwave.materialTypeMaster.controller;
+package in.co.greenwave.materialMaster.controller;
 
 import java.util.List;
 
@@ -11,8 +11,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import in.co.greenwave.materialTypeMaster.entity.MaterialVendorMaster;
-import in.co.greenwave.materialTypeMaster.service.MaterialVendorMasterService;
+import in.co.greenwave.materialMaster.entity.MaterialVendorMaster;
+import in.co.greenwave.materialMaster.service.MaterialVendorMasterService;
 
 @RestController
 @RequestMapping("/materialVendor")

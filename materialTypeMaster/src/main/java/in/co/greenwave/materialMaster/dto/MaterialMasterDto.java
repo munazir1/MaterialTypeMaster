@@ -1,4 +1,4 @@
-package in.co.greenwave.materialTypeMaster.dto;
+package in.co.greenwave.materialMaster.dto;
 
 import java.time.LocalDateTime;
 

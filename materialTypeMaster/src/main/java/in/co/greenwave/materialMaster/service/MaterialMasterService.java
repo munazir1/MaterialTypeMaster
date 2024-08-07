@@ -1,11 +1,11 @@
-package in.co.greenwave.materialTypeMaster.service;
+package in.co.greenwave.materialMaster.service;
 
 import java.util.List;
 import java.util.Optional;
 
 import org.springframework.http.ResponseEntity;
 
-import in.co.greenwave.materialTypeMaster.entity.MaterialMaster;
+import in.co.greenwave.materialMaster.entity.MaterialMaster;
 
 public interface MaterialMasterService {
 	

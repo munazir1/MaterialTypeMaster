@@ -1,4 +1,4 @@
-package in.co.greenwave.materialTypeMaster;
+package in.co.greenwave.materialMaster;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package in.co.greenwave.materialTypeMaster.entity;
+package in.co.greenwave.materialMaster.entity;
 
 import java.time.LocalDateTime;
 import java.util.Objects;

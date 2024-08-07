@@ -1,4 +1,4 @@
-package in.co.greenwave.materialTypeMaster.service;
+package in.co.greenwave.materialMaster.service;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -14,10 +14,10 @@ import org.springframework.stereotype.Service;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
-import in.co.greenwave.materialTypeMaster.dto.MaterialMasterDto;
-import in.co.greenwave.materialTypeMaster.entity.MaterialMaster;
-import in.co.greenwave.materialTypeMaster.repository.MaterialMasterRepository;
-import in.co.greenwave.materialTypeMaster.repository.MaterialTypeMasterRepository;
+import in.co.greenwave.materialMaster.dto.MaterialMasterDto;
+import in.co.greenwave.materialMaster.entity.MaterialMaster;
+import in.co.greenwave.materialMaster.repository.MaterialMasterRepository;
+import in.co.greenwave.materialMaster.repository.MaterialTypeMasterRepository;
 
 @Service
 public class MaterialMasterServiceImpl implements MaterialMasterService {

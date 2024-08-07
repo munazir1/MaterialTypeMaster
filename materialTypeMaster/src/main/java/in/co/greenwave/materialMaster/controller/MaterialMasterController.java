@@ -1,4 +1,4 @@
-package in.co.greenwave.materialTypeMaster.controller;
+package in.co.greenwave.materialMaster.controller;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -19,10 +19,10 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import in.co.greenwave.materialTypeMaster.entity.MaterialMaster;
-import in.co.greenwave.materialTypeMaster.entity.MaterialTypeMaster;
-import in.co.greenwave.materialTypeMaster.service.MaterialMasterService;
-import in.co.greenwave.materialTypeMaster.service.MaterialTypeMasterService;
+import in.co.greenwave.materialMaster.entity.MaterialMaster;
+import in.co.greenwave.materialMaster.entity.MaterialTypeMaster;
+import in.co.greenwave.materialMaster.service.MaterialMasterService;
+import in.co.greenwave.materialMaster.service.MaterialTypeMasterService;
 
 
 

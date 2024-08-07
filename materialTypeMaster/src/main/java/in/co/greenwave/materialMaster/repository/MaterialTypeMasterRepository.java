@@ -1,4 +1,4 @@
-package in.co.greenwave.materialTypeMaster.repository;
+package in.co.greenwave.materialMaster.repository;
 
 import java.util.List;
 
@@ -6,7 +6,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
-import in.co.greenwave.materialTypeMaster.entity.MaterialTypeMaster;
+import in.co.greenwave.materialMaster.entity.MaterialTypeMaster;
 
 
 @Repository

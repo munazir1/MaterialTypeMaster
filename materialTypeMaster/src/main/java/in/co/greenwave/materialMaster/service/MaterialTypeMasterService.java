@@ -1,8 +1,8 @@
-package in.co.greenwave.materialTypeMaster.service;
+package in.co.greenwave.materialMaster.service;
 
 import java.util.List;
 
-import in.co.greenwave.materialTypeMaster.entity.MaterialTypeMaster;
+import in.co.greenwave.materialMaster.entity.MaterialTypeMaster;
 
 public interface MaterialTypeMasterService {
 	

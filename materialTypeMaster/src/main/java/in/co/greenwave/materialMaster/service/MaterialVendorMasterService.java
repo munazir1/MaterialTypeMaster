@@ -1,10 +1,10 @@
-package in.co.greenwave.materialTypeMaster.service;
+package in.co.greenwave.materialMaster.service;
 
 import java.util.List;
 
 import org.springframework.http.ResponseEntity;
 
-import in.co.greenwave.materialTypeMaster.entity.MaterialVendorMaster;
+import in.co.greenwave.materialMaster.entity.MaterialVendorMaster;
 
 public interface MaterialVendorMasterService {
 
