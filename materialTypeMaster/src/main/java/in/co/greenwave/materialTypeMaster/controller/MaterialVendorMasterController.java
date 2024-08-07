@@ -36,6 +36,7 @@ public class MaterialVendorMasterController {
 	
 	@PostMapping("/updateMaterialVendor")
 	public void  updateMaterialVendorMaster(@RequestBody MaterialVendorMaster materialVendorMaster){
+		
 		 materialVendorMasterService.updateMaterialVendorMaster(materialVendorMaster);
 		//return materialVendorMaster;
 	}
