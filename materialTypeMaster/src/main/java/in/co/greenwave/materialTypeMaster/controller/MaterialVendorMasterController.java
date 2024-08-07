@@ -3,6 +3,7 @@ package in.co.greenwave.materialTypeMaster.controller;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -35,10 +36,10 @@ public class MaterialVendorMasterController {
 	}
 	
 	@PostMapping("/updateMaterialVendor")
-	public void  updateMaterialVendorMaster(@RequestBody MaterialVendorMaster materialVendorMaster){
+	public ResponseEntity<?>  updateMaterialVendorMaster(@RequestBody MaterialVendorMaster materialVendorMaster){
 		
-		 materialVendorMasterService.updateMaterialVendorMaster(materialVendorMaster);
-		//return materialVendorMaster;
+		 ResponseEntity<?> updateMaterialVendorMaster = materialVendorMasterService.updateMaterialVendorMaster(materialVendorMaster);
+		  return updateMaterialVendorMaster;
 	}
 	
 	

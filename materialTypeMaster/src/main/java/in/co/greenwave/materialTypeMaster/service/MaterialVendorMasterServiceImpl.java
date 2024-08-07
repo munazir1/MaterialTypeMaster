@@ -45,42 +45,34 @@ public class MaterialVendorMasterServiceImpl implements MaterialVendorMasterServ
 	@Override
 	public ResponseEntity<?> updateMaterialVendorMaster(MaterialVendorMaster materialVendorMaster) {
 		List<MaterialVendorMaster> all = materialVendorMasterRepo.findAll();
-	for (MaterialVendorMaster materialVendorMaster2 : all) {
-		System.out.println("materialVendorMaster2--------------"+materialVendorMaster2);
-	}    
 		for (MaterialVendorMaster materialVendorMaster2 : all) {
-			System.out.println("materialVendorMaster2materia+++++++++++++"+materialVendorMaster2);
-			if(materialVendorMaster2.getVendorCode().equalsIgnoreCase(materialVendorMaster.getVendorCode()) && 
-					materialVendorMaster2.getMaterialSAPCode().equalsIgnoreCase(materialVendorMaster.getMaterialSAPCode()) ){
-				System.out.println("materialVendorMaster2"+materialVendorMaster2);
-				if(materialVendorMaster2.getActive() == 1) {
-					System.out.println("getActive()==1");
-					materialVendorMaster2.setActive(0);
-					//materialVendorMaster.setEntryTime(LocalDateTime.now());
-					materialVendorMaster2.setUpdateTime(LocalDateTime.now());
-					materialVendorMasterRepo.save(materialVendorMaster2);
-				}
-			 else if (materialVendorMaster2.getActive()==0) {
-				 materialVendorMaster2.setActive(materialVendorMaster2.getActive()-1);
-				System.out.println("getActive()==0");
-				//materialVendorMaster.setEntryTime(LocalDateTime.now());
-				 materialVendorMaster2.setUpdateTime(LocalDateTime.now());
-				materialVendorMasterRepo.save(materialVendorMaster2);
-			}
-			else if(materialVendorMaster2.getActive()<0) {
-				System.out.println("getActive()<0");
-				materialVendorMaster2.setActive(materialVendorMaster2.getActive() - 1);
-				materialVendorMaster2.setUpdateTime(LocalDateTime.now());
-			}
-			 
-			
-			}
-		
-		
-			 
-		}
-		return   ResponseEntity.status(HttpStatus.CREATED).body("Material Deletd") ;
-	}
+            System.out.println("materialVendorMaster2materia+++++++++++++" + materialVendorMaster2);
+            if (materialVendorMaster2.getVendorCode().equalsIgnoreCase(materialVendorMaster.getVendorCode())
+                    && materialVendorMaster2.getMaterialSAPCode().equalsIgnoreCase(materialVendorMaster.getMaterialSAPCode())) {
+                System.out.println("materialVendorMaster2" + materialVendorMaster2);
+                if (materialVendorMaster2.getActive() == 1) {
+                    System.out.println("getActive()==1");
+                    materialVendorMaster2.setActive(0);
+                    materialVendorMaster2.setUpdateTime(LocalDateTime.now());
+                    materialVendorMasterRepo.save(materialVendorMaster2);
+                    return ResponseEntity.status(HttpStatus.OK).body("Material Vendor Master deactivated successfully."+materialVendorMaster2.getVendorCode());
+                } else if (materialVendorMaster2.getActive() == 0) {
+                    System.out.println("getActive()==0");
+                    materialVendorMaster2.setActive(-1);
+                    materialVendorMaster2.setUpdateTime(LocalDateTime.now());
+                    materialVendorMasterRepo.save(materialVendorMaster2);
+                    return ResponseEntity.status(HttpStatus.OK).body("Material Vendor Master"+materialVendorMaster2.getVendorCode());
+                } else if (materialVendorMaster2.getActive() < 0) {
+                    System.out.println("getActive()<0");
+                    materialVendorMaster2.setActive(materialVendorMaster2.getActive() - 1);
+                    materialVendorMaster2.setUpdateTime(LocalDateTime.now());
+                    materialVendorMasterRepo.save(materialVendorMaster2);
+                    return ResponseEntity.status(HttpStatus.OK).body("Material Vendor Master marked for further deletion."+materialVendorMaster2.getVendorCode());
+                }
+            }
+        }
+        return ResponseEntity.status(HttpStatus.NOT_FOUND).body("Material Vendor Master not found."+materialVendorMaster.getVendorCode());
+    }
 
 }
 
